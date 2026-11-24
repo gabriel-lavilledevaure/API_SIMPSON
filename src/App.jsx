@@ -5,17 +5,31 @@ import EpisodeList from "./components/EpisodeList";
 import CastList from "./components/CastList";
 
 function App() {
-  const { data: show, isLoading } = useFetch(
-    "https://api.tvmaze.com/shows/83?embed[]=episodes&embed[]=cast",
-  );
+  const {
+    data: show,
+    error,
+    isLoading,
+  } = useFetch("https://api.tvmaze.com/shows/83?embed[]=episodes&embed[]=cast");
 
   if (isLoading) {
-    return <main>Chargement...</main>;
+    return (
+      <main className="bg-blue font-body flex min-h-screen items-center justify-center">
+        <p>Chargement...</p>
+      </main>
+    );
+  }
+
+  if (error) {
+    return <main>{error.message}</main>;
+  }
+
+  if (!show?.name) {
+    return <main>Impossible de charger la série.</main>;
   }
 
   return (
-    <>
-      <Header />
+    <div className="bg-cream font-body text-dark min-h-screen">
+      <Header show={show} />
 
       <main>
         <Hero show={show} />
@@ -24,7 +38,7 @@ function App() {
 
         <CastList casts={show?._embedded?.cast || []} />
       </main>
-    </>
+    </div>
   );
 }
 

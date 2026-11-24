@@ -1,32 +1,31 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 @import "tailwindcss";
 
-/* Variables */
-
 :root {
-  --color-yellow: #ffd90f;
-  --color-blue: #75c9f1;
-  --color-pink: #f5a3c7;
-  --color-cream: #fdf9ed;
-  --color-dark: #252525;
-  --color-white: #ffffff;
+  /* Couleurs */
+  --yellow: #ffd90f;
+  --blue: #75c9f1;
+  --pink: #f5a3c7;
+  --cream: #fdf9ed;
+  --dark: #252525;
+  --white: #ffffff;
 
-  --font-title: "Fredoka", sans-serif;
-  --font-body: "Nunito", sans-serif;
+  /* Typographies */
+  --title: "Fredoka", sans-serif;
+  --body: "Nunito", sans-serif;
 }
 
-/* Tailwind CSS 4 */
-
 @theme inline {
-  --color-yellow: var(--color-yellow);
-  --color-blue: var(--color-blue);
-  --color-pink: var(--color-pink);
-  --color-cream: var(--color-cream);
-  --color-dark: var(--color-dark);
-  --color-white: var(--color-white);
+  /* Couleurs */
+  --color-yellow: var(--yellow);
+  --color-blue: var(--blue);
+  --color-pink: var(--pink);
+  --color-cream: var(--cream);
+  --color-dark: var(--dark);
+  --color-white: var(--white);
 
-  --font-title: var(--font-title);
-  --font-body: var(--font-body);
+  /* Typographies */
+  --font-title: var(--title);
+  --font-body: var(--body);
 }
